@@ -1,0 +1,35 @@
+<h1>  hola mundo  </h1>
+
+<button (click)=Jugar()> Jugar   </button>
+
+<div class="tablero">   
+<tr *ngFor="let filas of miJuego.BuscaMinas.tablero " >    
+    <td *ngFor= "let casilla of filas"> 
+        <div class="casilla" (click)="miJuego.BuscaMinas.DescubrirCasilla(casilla.coordenada)">
+            <div *ngIf="casilla.seleccion"> 
+                
+                <div class="casilla_bomba" *ngIf="casilla.tieneMina">
+                        Boom
+                </div>
+
+                <div class="casilla_noBomba" *ngIf="!casilla.tieneMina">
+                    
+                    {{casilla.minasCerca}}
+                </div>
+                    
+
+            </div>
+            </div>  
+    
+    </td>
+</tr>
+</div>
+<div >Minas Encontradas:{{miJuego.BuscaMinas.minasEncontradas}} </div>
+<div >Cantidad de minas:{{miJuego.BuscaMinas.cantidadMinas}} </div>
+
+
+   
+     
+     
+      
+  

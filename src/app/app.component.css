@@ -1,0 +1,13 @@
+.casilla{
+    background-color: lightgray;
+    height: 45px;
+    width: 45px;
+    border: 5px;
+    
+}
+.casilla_bomba{
+   background-color: red;
+}
+.casilla_noBomba{
+color: blue;
+    }
