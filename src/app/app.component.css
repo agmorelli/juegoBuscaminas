@@ -11,3 +11,13 @@
 .casilla_noBomba{
 color: blue;
     }
+
+
+.finalJuego
+{    
+z-index: 3;
+position: absolute;
+margin-top: 5px;
+margin-left: 5%;
+color: darkred;
+}

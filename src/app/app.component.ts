@@ -19,17 +19,14 @@ miJuego:Juego;
 Jugar()
 {
 
-          this.miJuego=new Juego("augusto");
-
-
-
-  
+  this.miJuego=new Juego("augusto");
+  if(this.miJuego.BuscaMinas.estado==false)
+  {
+    return 1;
+  }
+ 
 }
 
-Saludar()
-{
-  alert("hola");
-}
  
  
 }

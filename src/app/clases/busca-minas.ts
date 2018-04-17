@@ -7,8 +7,7 @@ export class BuscaMinas {
     public cantidadMinas: number;
     public minasEncontradas:number;
     public nivel:number;
-    public estado:boolean;
-   
+    public final:boolean;
 
 public constructor(nivel:number)
 {    
@@ -17,8 +16,8 @@ public constructor(nivel:number)
     this.minasEncontradas=0;
     this.tablero=[];
     this.nivel=nivel;
-    this.estado=true;
-   
+    this.final=false;
+  
     for(let i:number=0; i< this.nivel ;i++)
     {
          this.tablero[i]=[];
@@ -45,7 +44,10 @@ public constructor(nivel:number)
         {
             this.minasEncontradas++;
             this.tablero[coor[0]][coor[1]].minasCerca=true;
-            this.estado=false;
+           this.TerminarJuego();
+            
+           
+            
 
         }
         else
@@ -59,8 +61,7 @@ public constructor(nivel:number)
                    
                     if(  (coor[0]+i >= 0 && coor[1]+j >= 0)   &&   (coor[0]+i <= this.nivel-1 && coor[1]+j <= this.nivel-1)   )
                     {
-                         console.log(coor[0]);
-                         console.log(coor[1]);
+                         
                         if(this.tablero[coor[0]+i][coor[1]+j].tieneMina)
                         {
                             this.tablero[coor[0]][coor[1]].minasCerca++;
@@ -77,7 +78,7 @@ public constructor(nivel:number)
     }
 
 
-public PonerNumeros(coor:Array<number>)
+private PonerNumeros(coor:Array<number>)
 {
 
     for (var i=-1 ; i<2 ; i++)
@@ -99,7 +100,7 @@ public PonerNumeros(coor:Array<number>)
     
 }
 
-public PonerMinas()
+private PonerMinas()
 {
 
     for (let i=0;i<this.nivel;i++)
@@ -124,6 +125,20 @@ public PonerMinas()
 
 
 }
+
+private TerminarJuego()
+{
+    for(let i=0;i<this.nivel; i++)
+    {
+        for(let j=0;j<this.nivel; j++)
+        {   let coor=Array<number>(i,j);
+            this.DescubrirCasilla(coor);    
+        }        
+    }
+    this.final=true;
+}
+
+
 
 }///FINAL CLASE
 
