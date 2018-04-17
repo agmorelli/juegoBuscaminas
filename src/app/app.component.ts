@@ -18,10 +18,10 @@ miJuego:Juego;
 
 Jugar()
 {
-  do {
+
           this.miJuego=new Juego("augusto");
 
-  } while (this.miJuego.BuscaMinas.estado=true);
+
 
   
 }
