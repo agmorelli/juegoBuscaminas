@@ -2,7 +2,6 @@ import {Casilla} from './casilla';
 
 export class BuscaMinas {
 
-     public puntos: number;
     public tablero:Casilla[][];
     public cantidadMinas: number;
     public minasEncontradas:number;
@@ -11,7 +10,7 @@ export class BuscaMinas {
 
 public constructor(nivel:number)
 {    
-    this.puntos=0;
+    
     this.cantidadMinas=0;
     this.minasEncontradas=0;
     this.tablero=[];
@@ -31,6 +30,7 @@ public constructor(nivel:number)
         } 
     }
     this.PonerMinas();
+  
 }
 
 
@@ -110,7 +110,7 @@ private PonerMinas()
         {
             let parametroParaMina=(Math.round(Math.random()*10));
           
-              if(parametroParaMina<=4)
+              if(parametroParaMina<=4 )
             {   
                 
                 this.tablero[i][j].tieneMina=true;
@@ -137,6 +137,8 @@ private TerminarJuego()
     }
     this.final=true;
 }
+                      
+    
 
 
 

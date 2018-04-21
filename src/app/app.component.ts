@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Juego } from './clases/juego';
+import { BuscaMinas } from './clases/busca-minas';
 import { NgIf } from '@angular/common';
 
 
@@ -13,19 +13,17 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent {
 
-miJuego:Juego;
+miJuego:BuscaMinas;
+nivel=5;
 
 
-Jugar()
+public Jugar()
 {
+  this.miJuego=new BuscaMinas(this.nivel)
 
-  this.miJuego=new Juego("augusto");
-  if(this.miJuego.BuscaMinas.estado==false)
-  {
-    return 1;
-  }
- 
 }
+
+
 
  
  
